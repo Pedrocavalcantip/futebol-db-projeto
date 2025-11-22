@@ -44,7 +44,13 @@ CREATE TABLE Jogador (
     gols INTEGER DEFAULT 0,
     assistencias INTEGER DEFAULT 0,
     desarmes INTEGER DEFAULT 0,
-    -- Restrição de CHECK para garantir que seja pelo menos uma posição (Totalidade para Posições)
     CHECK (is_atacante = TRUE OR is_meio_campo = TRUE OR is_defensor = TRUE),
-    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE -- PK e FK para Pessoa
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE
 );
+
+CREATE TABLE Tecnico (
+    cpf VARCHAR(14) PRIMARY KEY,
+    licenca VARCHAR(50) UNIQUE NOT NULL,
+    id_clube INTEGER UNIQUE,
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE,
+    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube)
