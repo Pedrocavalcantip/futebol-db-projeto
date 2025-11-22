@@ -1,4 +1,6 @@
-## Projeto de Banco de Dados - Campaoneto de Futebol
+# Projeto de Banco de Dados - Campeonato de Futebol
+Este projeto consiste na modelagem e implementação de um banco de dados relacional para gerenciar todas as entidades e eventos de uma competição de futebol (competições, clubes, jogadores, partidas e contratos).
+
 ### Equipe:
 - Davi Peixoto Freire Falcão (dpff@cin.ufpe.br)
 - Felipe Costa Coutinho (fcc4@cin.ufpe.br)
@@ -17,3 +19,9 @@ As partidas, núcleo central do sistema, estão sempre ligadas a um campeonato, 
 
 ## Stack
 O banco de dados será desenvolvido em PostgreSQL com conexão implementada em Python.
+| Componente | Tecnologia | Versão/Driver | Notas |
+| :--- | :--- | :--- | :--- |
+| **SGBD** | **PostgreSQL** | 14+ (Recomendado) | Plataforma de implementação do DDL/DML. |
+| **Conexão** | **Python** | 3.10+ | Linguagem utilizada para demonstrar a conexão e execução de consultas via script. |
+| **Driver** | `psycopg2` | Mais recente | Biblioteca Python para comunicação com PostgreSQL. |
+| **Modelagem**| Modelo EER | Notação UML/Chen | O esquema conceitual utilizado na Etapa 3. |
