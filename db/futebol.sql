@@ -11,3 +11,10 @@ CREATE TABLE Estadio (
     cidade VARCHAR(100) NOT NULL,
     capacidade INTEGER CHECK (capacidade > 0)
 );
+
+CREATE TABLE Clube (
+    id_clube SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE NOT NULL,
+    data_fundacao DATE,
+    cidade VARCHAR(100) NOT NULL
+);
