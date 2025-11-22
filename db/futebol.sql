@@ -54,3 +54,17 @@ CREATE TABLE Tecnico (
     id_clube INTEGER UNIQUE,
     FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE,
     FOREIGN KEY (id_clube) REFERENCES Clube(id_clube)
+);
+
+--- Uniao
+CREATE TABLE Patrocinados (
+    id_patrocinado SERIAL PRIMARY KEY,
+    id_clube INTEGER UNIQUE,
+    cpf_jogador VARCHAR(14) UNIQUE,
+
+    -- Garante que o Patrocinado é ou um Clube OU um Jogador (Disjunção)
+    CHECK ((id_clube IS NOT NULL AND cpf_jogador IS NULL) OR (id_clube IS NULL AND cpf_jogador IS NOT NULL)),
+
+    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube) ON DELETE CASCADE,
+    FOREIGN KEY (cpf_jogador) REFERENCES Jogador(cpf) ON DELETE CASCADE
+);
