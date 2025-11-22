@@ -30,7 +30,21 @@ CREATE TABLE Campeonato (
 
 --- Subclasses
 CREATE TABLE Juiz (
-    cpf VARCHAR(14) PRIMARY KEY,
+    cpf VARCHAR(11) PRIMARY KEY,
     registro_federacao VARCHAR(50) UNIQUE NOT NULL,
     FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE -- ON DELETE CASCADE significa que se uma Pessoa for deletada, o Juiz correspondente também será deletado
+);
+
+CREATE TABLE Jogador (
+    cpf VARCHAR(11) PRIMARY KEY,
+    is_atacante BOOLEAN DEFAULT FALSE,
+    is_meio_campo BOOLEAN DEFAULT FALSE,
+    is_defensor BOOLEAN DEFAULT FALSE,
+    -- Estatísticas (para evitar dados nulos desnecessários em Pessoa)
+    gols INTEGER DEFAULT 0,
+    assistencias INTEGER DEFAULT 0,
+    desarmes INTEGER DEFAULT 0,
+    -- Restrição de CHECK para garantir que seja pelo menos uma posição (Totalidade para Posições)
+    CHECK (is_atacante = TRUE OR is_meio_campo = TRUE OR is_defensor = TRUE),
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE -- PK e FK para Pessoa
 );
