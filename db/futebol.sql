@@ -6,8 +6,8 @@ CREATE TABLE Pessoa (
 );
 
 CREATE TABLE Estadio (
-    id_estadio  SERIAL PRIMARY KEY,
-    nome        VARCHAR(999) NOT NULL,
-    cidade      VARCHAR(999),
-    capacidade  INTEGER
+    id_estadio SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE NOT NULL,
+    cidade VARCHAR(100) NOT NULL,
+    capacidade INTEGER CHECK (capacidade > 0)
 );
