@@ -1,70 +1,154 @@
---- Entidades Fortes
 CREATE TABLE Pessoa (
-    cpf VARCHAR(1411) PRIMARY KEY,
-    nome VARCHAR(999) NOT NULL,
-    nacionalidade VARCHAR(50),
+    cpf             CHAR(11) PRIMARY KEY,
+    nome            VARCHAR(999) NOT NULL,
+    nacionalidade   VARCHAR(50),
     data_nascimento DATE
 );
 
-CREATE TABLE Estadio (
-    id_estadio SERIAL PRIMARY KEY,
-    nome VARCHAR(100) UNIQUE NOT NULL,
-    cidade VARCHAR(100) NOT NULL,
-    capacidade INTEGER CHECK (capacidade > 0)
+CREATE TABLE Possiveis_Cartoes (
+    id_possiveis_cartoes SERIAL PRIMARY KEY
+);
+CREATE TABLE Patrocinados (
+    id_patrocinado SERIAL PRIMARY KEY
 );
 
 CREATE TABLE Clube (
-    id_clube SERIAL PRIMARY KEY,
-    nome VARCHAR(100) UNIQUE NOT NULL,
-    data_fundacao DATE,
-    cidade VARCHAR(100) NOT NULL
+    id_clube        SERIAL PRIMARY KEY,
+    id_patrocinado  INTEGER UNIQUE,
+    nome            VARCHAR(100) NOT NULL,
+    data_fundacao   DATE,
+    cidade          VARCHAR(100),
+    FOREIGN KEY (id_patrocinado) REFERENCES Patrocinados(id_patrocinado)
+);
+
+CREATE TABLE Jogador (
+    cpf                 CHAR(11) PRIMARY KEY,
+    id_possiveis_cartoes INTEGER,
+    id_patrocinado      INTEGER,
+    atacante            BOOLEAN DEFAULT FALSE,
+    meio_campo          BOOLEAN DEFAULT FALSE,
+    defensor            BOOLEAN DEFAULT FALSE,
+    gols                INTEGER,
+    assistencias        INTEGER,
+    desarmes            INTEGER,
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf),
+    FOREIGN KEY (id_possiveis_cartoes) REFERENCES Possiveis_Cartoes(id_possiveis_cartoes),
+    FOREIGN KEY (id_patrocinado) REFERENCES Patrocinados(id_patrocinado)
+);
+
+CREATE TABLE Tecnico (
+    cpf                 CHAR(11) PRIMARY KEY,
+    id_possiveis_cartoes INTEGER,
+    id_clube            INTEGER UNIQUE,
+    licenca             VARCHAR(50),
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf),
+    FOREIGN KEY (id_possiveis_cartoes) REFERENCES Possiveis_Cartoes(id_possiveis_cartoes),
+    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube)
+);
+
+CREATE TABLE Juiz (
+    cpf                CHAR(11) PRIMARY KEY,
+    registro_federacao VARCHAR(50),
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf)
+);
+
+CREATE TABLE Patrocinador (
+    id_patrocinador   SERIAL PRIMARY KEY,
+    nome_patrocinador VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Contrato (
+    id_contrato SERIAL PRIMARY KEY,
+    data_inicio DATE NOT NULL,
+    data_fim    DATE
+);
+
+CREATE TABLE Contrato_Jogador (
+    id_contrato INTEGER PRIMARY KEY,
+    cpf_jogador CHAR(11) NOT NULL,
+    id_clube    INTEGER NOT NULL,
+    salario     NUMERIC(12,2) NOT NULL,
+    FOREIGN KEY (id_contrato) REFERENCES Contrato(id_contrato),
+    FOREIGN KEY (cpf_jogador) REFERENCES Jogador(cpf),
+    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube)
+);
+
+CREATE TABLE Contrato_Patrocinio (
+    id_contrato     INTEGER PRIMARY KEY,
+    id_patrocinado  INTEGER NOT NULL,
+    id_patrocinador INTEGER NOT NULL,
+    valor           NUMERIC(12,2) NOT NULL,
+    FOREIGN KEY (id_contrato) REFERENCES Contrato(id_contrato),
+    FOREIGN KEY (id_patrocinado) REFERENCES Patrocinados(id_patrocinado),
+    FOREIGN KEY (id_patrocinador) REFERENCES Patrocinador(id_patrocinador)
 );
 
 CREATE TABLE Campeonato (
     id_campeonato SERIAL PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    temporada VARCHAR(20) NOT NULL,
-    regulamento TEXT,
-    UNIQUE (nome, temporada)
+    nome          VARCHAR(100) NOT NULL,
+    temporada     VARCHAR(20),
+    regulamento   TEXT
 );
 
---- Subclasses
-CREATE TABLE Juiz (
-    cpf VARCHAR(11) PRIMARY KEY,
-    registro_federacao VARCHAR(50) UNIQUE NOT NULL,
-    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE -- ON DELETE CASCADE significa que se uma Pessoa for deletada, o Juiz correspondente também será deletado
+CREATE TABLE Rodada (
+    numero_rodada INTEGER,
+    id_campeonato INTEGER,
+    PRIMARY KEY (numero_rodada, id_campeonato),
+    FOREIGN KEY (id_campeonato) REFERENCES Campeonato(id_campeonato)
 );
 
-CREATE TABLE Jogador (
-    cpf VARCHAR(11) PRIMARY KEY,
-    is_atacante BOOLEAN DEFAULT FALSE,
-    is_meio_campo BOOLEAN DEFAULT FALSE,
-    is_defensor BOOLEAN DEFAULT FALSE,
-    -- Estatísticas (para evitar dados nulos desnecessários em Pessoa)
-    gols INTEGER DEFAULT 0,
-    assistencias INTEGER DEFAULT 0,
-    desarmes INTEGER DEFAULT 0,
-    CHECK (is_atacante = TRUE OR is_meio_campo = TRUE OR is_defensor = TRUE),
-    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE
+CREATE TABLE Participa (
+    id_clube      INTEGER,
+    id_campeonato INTEGER,
+    PRIMARY KEY (id_clube, id_campeonato),
+    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube),
+    FOREIGN KEY (id_campeonato) REFERENCES Campeonato(id_campeonato)
 );
 
-CREATE TABLE Tecnico (
-    cpf VARCHAR(11) PRIMARY KEY,
-    licenca VARCHAR(50) UNIQUE NOT NULL,
-    id_clube INTEGER UNIQUE,
-    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE,
-    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube)
+CREATE TABLE Estadio (
+    id_estadio  SERIAL PRIMARY KEY,
+    nome        VARCHAR(100) NOT NULL,
+    cidade      VARCHAR(100),
+    capacidade  INTEGER
 );
 
---- Uniao
-CREATE TABLE Patrocinados (
-    id_patrocinado SERIAL PRIMARY KEY,
-    id_clube INTEGER UNIQUE,
-    cpf_jogador VARCHAR(14) UNIQUE,
+CREATE TABLE Partida (
+    id_partida        SERIAL PRIMARY KEY,
+    id_campeonato     INTEGER NOT NULL,
+    numero_rodada     INTEGER NOT NULL,
+    id_clube_mandante INTEGER NOT NULL,
+    id_clube_visitante INTEGER NOT NULL,
+    cpf_juiz          CHAR(11) NOT NULL,
+    id_estadio        INTEGER NOT NULL,
+    data_partida      DATE NOT NULL,
+    horario           TIME,
+    placar_mandante   INTEGER DEFAULT 0,
+    placar_visitante  INTEGER DEFAULT 0,
+    FOREIGN KEY (id_campeonato, numero_rodada)
+        REFERENCES Rodada(id_campeonato, numero_rodada),
+    FOREIGN KEY (id_clube_mandante) REFERENCES Clube(id_clube),
+    FOREIGN KEY (id_clube_visitante) REFERENCES Clube(id_clube),
+    FOREIGN KEY (cpf_juiz) REFERENCES Juiz(cpf),
+    FOREIGN KEY (id_estadio) REFERENCES Estadio(id_estadio),
+    CHECK (id_clube_mandante <> id_clube_visitante)
+);
 
-    -- Garante que o Patrocinado é ou um Clube OU um Jogador (Disjunção)
-    CHECK ((id_clube IS NOT NULL AND cpf_jogador IS NULL) OR (id_clube IS NULL AND cpf_jogador IS NOT NULL)),
+CREATE TABLE Gol (
+    id_partida  INTEGER,
+    cpf_jogador CHAR(11),
+    minuto      INTEGER,
+    PRIMARY KEY (id_partida, cpf_jogador, minuto),
+    FOREIGN KEY (id_partida) REFERENCES Partida(id_partida),
+    FOREIGN KEY (cpf_jogador) REFERENCES Jogador(cpf)
+);
 
-    FOREIGN KEY (id_clube) REFERENCES Clube(id_clube) ON DELETE CASCADE,
-    FOREIGN KEY (cpf_jogador) REFERENCES Jogador(cpf) ON DELETE CASCADE
+CREATE TABLE Cartao (
+    id_partida         INTEGER,
+    id_possiveis_cartoes INTEGER,
+    tipo_cartao        VARCHAR(10) NOT NULL,
+    minuto             INTEGER,
+    PRIMARY KEY (id_partida, id_possiveis_cartoes, minuto),
+    FOREIGN KEY (id_partida) REFERENCES Partida(id_partida),
+    FOREIGN KEY (id_possiveis_cartoes) REFERENCES Possiveis_Cartoes(id_possiveis_cartoes),
+    CHECK (tipo_cartao IN ('amarelo', 'vermelho'))
 );
