@@ -1,3 +1,4 @@
+--- Entidades Fortes
 CREATE TABLE Pessoa (
     cpf VARCHAR(1411) PRIMARY KEY,
     nome VARCHAR(999) NOT NULL,
@@ -18,3 +19,10 @@ CREATE TABLE Clube (
     data_fundacao DATE,
     cidade VARCHAR(100) NOT NULL
 );
+
+CREATE TABLE Campeonato (
+    id_campeonato SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    temporada VARCHAR(20) NOT NULL,
+    regulamento TEXT,
+    UNIQUE (nome, temporada)
