@@ -26,3 +26,11 @@ CREATE TABLE Campeonato (
     temporada VARCHAR(20) NOT NULL,
     regulamento TEXT,
     UNIQUE (nome, temporada)
+);
+
+--- Subclasses
+CREATE TABLE Juiz (
+    cpf VARCHAR(14) PRIMARY KEY,
+    registro_federacao VARCHAR(50) UNIQUE NOT NULL,
+    FOREIGN KEY (cpf) REFERENCES Pessoa(cpf) ON DELETE CASCADE -- ON DELETE CASCADE significa que se uma Pessoa for deletada, o Juiz correspondente também será deletado
+);
