@@ -617,88 +617,86 @@ INSERT INTO Cartao VALUES (10,29,'amarelo',63);
 ------------------------------------------------------------
 
 ---------------- RODADA 1 ----------------
--- Partida 21: Sport 3 x 1 Náutico
+-- Partida 11: Sport 3 x 1 Náutico
 INSERT INTO Partida VALUES
-(21, 2, 1, 1, 2, '93000000001', 2, '2024-03-01','16:00', 3, 1);
-INSERT INTO Gol VALUES (21,'91000000001',10);  -- Sport
-INSERT INTO Gol VALUES (21,'91000000002',20);  -- Sport
-INSERT INTO Gol VALUES (21,'91000000007',75);  -- Sport
-INSERT INTO Gol VALUES (21,'91000000011',60);  -- Náutico
-INSERT INTO Cartao VALUES (21,12,'amarelo',45);
+(11, 2, 1, 1, 2, '93000000001', 2, '2024-03-01','16:00', 3, 1);
+INSERT INTO Gol VALUES (11,'91000000001',10);  -- Sport
+INSERT INTO Gol VALUES (11,'91000000002',20);  -- Sport
+INSERT INTO Gol VALUES (11,'91000000007',75);  -- Sport
+INSERT INTO Gol VALUES (11,'91000000011',60);  -- Náutico
+INSERT INTO Cartao VALUES (11,12,'amarelo',45);
 
--- Partida 22: Bahia 1 x 1 Ceará
+-- Partida 12: Bahia 1 x 1 Ceará
 INSERT INTO Partida VALUES
-(22, 2, 1, 6, 7, '93000000002', 4, '2024-03-02','18:00', 1, 1);
-INSERT INTO Gol VALUES (22,'91100000001',35);  -- Bahia 
-INSERT INTO Gol VALUES (22,'91100000011',70);  -- Ceará 
-INSERT INTO Cartao VALUES (22,47,'amarelo',22);
+(12, 2, 1, 6, 7, '93000000002', 4, '2024-03-02','18:00', 1, 1);
+INSERT INTO Gol VALUES (12,'91100000001',35);  -- Bahia 
+INSERT INTO Gol VALUES (12,'91100000011',70);  -- Ceará 
+INSERT INTO Cartao VALUES (12,47,'amarelo',22);
 
 ---------------- RODADA 2 ----------------
--- Partida 23: Fortaleza 0 x 2 Sport
+-- Partida 13: Fortaleza 0 x 2 Sport
 INSERT INTO Partida VALUES
-(23, 2, 2, 8, 1, '93000000003', 1, '2024-03-05','20:00', 0, 2);
-INSERT INTO Gol VALUES (23,'91000000001',15);  -- Sport
-INSERT INTO Gol VALUES (23,'91000000008',55);  -- Sport
-INSERT INTO Cartao VALUES (23,48,'amarelo',33);
+(13, 2, 2, 8, 1, '93000000003', 1, '2024-03-05','20:00', 0, 2);
+INSERT INTO Gol VALUES (13,'91000000001',15);  -- Sport
+INSERT INTO Gol VALUES (13,'91000000008',55);  -- Sport
+INSERT INTO Cartao VALUES (13,48,'amarelo',33);
 
--- Partida 24: Náutico 1 x 0 Bahia
+-- Partida 14: Náutico 1 x 0 Bahia
 INSERT INTO Partida VALUES
-(24, 2, 2, 2, 6, '93000000004', 3, '2024-03-06','18:00', 1, 0);
-INSERT INTO Gol VALUES (24,'91000000012',12);   -- Náutico
+(14, 2, 2, 2, 6, '93000000004', 3, '2024-03-06','18:00', 1, 0);
+INSERT INTO Gol VALUES (14,'91000000012',12);   -- Náutico
 -- Bahia não marcou → sem gol
-INSERT INTO Cartao VALUES (24,16,'amarelo',77);
+INSERT INTO Cartao VALUES (14,16,'amarelo',77);
 
 ---------------- RODADA 3 ----------------
--- Partida 25: Sport 2 x 1 Ceará
+-- Partida 15: Sport 2 x 1 Ceará
 INSERT INTO Partida VALUES
-(25, 2, 3, 1, 7, '93000000005', 2, '2024-03-10','16:00', 2, 1);
-INSERT INTO Gol VALUES (25,'91000000001',22);   -- Sport
-INSERT INTO Gol VALUES (25,'91000000007',60);   -- Sport
-INSERT INTO Gol VALUES (25,'91100000011',80);   -- Ceará 
-INSERT INTO Cartao VALUES (25,7,'amarelo',35);
-
--- Partida 26: Bahia 0 x 2 Fortaleza
+(15, 2, 3, 1, 7, '93000000005', 2, '2024-03-10','16:00', 2, 1);
+INSERT INTO Gol VALUES (15,'91000000001',22);   -- Sport
+INSERT INTO Gol VALUES (15,'91000000007',60);   -- Sport
+INSERT INTO Gol VALUES (15,'91100000011',80);   -- Ceará 
+INSERT INTO Cartao VALUES (15,7,'amarelo',35);
+-- Partida 16: Bahia 0 x 2 Fortaleza
 INSERT INTO Partida VALUES
-(26, 2, 3, 6, 8, '93000000003', 5, '2024-03-11','19:00', 0, 2);
-INSERT INTO Gol VALUES (26,'91100000021',55);   -- Fortaleza 
-INSERT INTO Gol VALUES (26,'91100000022',77);   -- Fortaleza 
-INSERT INTO Cartao VALUES (26,50,'amarelo',20);
+(16, 2, 3, 6, 8, '93000000003', 5, '2024-03-11','19:00', 0, 2);
+INSERT INTO Gol VALUES (16,'91100000021',55);   -- Fortaleza 
+INSERT INTO Gol VALUES (16,'91100000022',77);   -- Fortaleza 
+INSERT INTO Cartao VALUES (16,50,'amarelo',20);
 
 ---------------- RODADA 4 ----------------
--- Partida 27: Ceará 1 x 3 Sport
+-- Partida 17: Ceará 1 x 3 Sport
 INSERT INTO Partida VALUES
-(27, 2, 4, 7, 1, '93000000004', 4, '2024-03-15','20:00', 1, 3);
-INSERT INTO Gol VALUES (27,'91100000011',25);   -- Ceará 
-INSERT INTO Gol VALUES (27,'91000000001',12);   -- Sport
-INSERT INTO Gol VALUES (27,'91000000002',40);   -- Sport
-INSERT INTO Gol VALUES (27,'91000000007',88);   -- Sport
-INSERT INTO Cartao VALUES (27,34,'amarelo',66);
+(17, 2, 4, 7, 1, '93000000004', 4, '2024-03-15','20:00', 1, 3);
+INSERT INTO Gol VALUES (17,'91100000011',25);   -- Ceará 
+INSERT INTO Gol VALUES (17,'91000000001',12);   -- Sport
+INSERT INTO Gol VALUES (17,'91000000002',40);   -- Sport
+INSERT INTO Gol VALUES (17,'91000000007',88);   -- Sport
+INSERT INTO Cartao VALUES (17,34,'amarelo',66);
 
--- Partida 28: Fortaleza 2 x 2 Náutico
+-- Partida 18: Fortaleza 2 x 2 Náutico
 INSERT INTO Partida VALUES
-(28, 2, 4, 8, 2, '93000000001', 1, '2024-03-16','18:00', 2, 2);
-INSERT INTO Gol VALUES (28,'91100000021',14);  -- Fortaleza
-INSERT INTO Gol VALUES (28,'91100000022',60);  -- Fortaleza
-INSERT INTO Gol VALUES (28,'91000000011',22);  -- Náutico
-INSERT INTO Gol VALUES (28,'91000000012',50);  -- Náutico
-INSERT INTO Cartao VALUES (28,18,'amarelo',77);
+(18, 2, 4, 8, 2, '93000000001', 1, '2024-03-16','18:00', 2, 2);
+INSERT INTO Gol VALUES (18,'91100000021',14);  -- Fortaleza
+INSERT INTO Gol VALUES (18,'91100000022',60);  -- Fortaleza
+INSERT INTO Gol VALUES (18,'91000000011',22);  -- Náutico
+INSERT INTO Gol VALUES (18,'91000000012',50);  -- Náutico
+INSERT INTO Cartao VALUES (18,18,'amarelo',77);
 
 ---------------- RODADA 5 ----------------
--- Partida 29: Sport 4 x 0 Bahia
+-- Partida 19: Sport 4 x 0 Bahia
 INSERT INTO Partida VALUES
-(29, 2, 5, 1, 6, '93000000002', 2, '2024-03-20','20:00', 4, 0);
-INSERT INTO Gol VALUES (29,'91000000001',10);  -- Sport
-INSERT INTO Gol VALUES (29,'91000000002',21);  -- Sport
-INSERT INTO Gol VALUES (29,'91000000007',44);  -- Sport
-INSERT INTO Gol VALUES (29,'91000000008',80);  -- Sport
+(19, 2, 5, 1, 6, '93000000002', 2, '2024-03-20','20:00', 4, 0);
+INSERT INTO Gol VALUES (19,'91000000001',10);  -- Sport
+INSERT INTO Gol VALUES (19,'91000000002',21);  -- Sport
+INSERT INTO Gol VALUES (19,'91000000007',44);  -- Sport
+INSERT INTO Gol VALUES (19,'91000000008',80);  -- Sport
 -
-INSERT INTO Cartao VALUES (29,41,'amarelo',32);
+INSERT INTO Cartao VALUES (19,41,'amarelo',32);
 
 -- Partida 30: Náutico 2 x 1 Ceará
-INSERT INTO Partida VALUES
-(30, 2, 5, 2, 7, '93000000003', 3, '2024-03-21','18:00', 2, 1);
-INSERT INTO Gol VALUES (30,'91000000011',10);    -- Náutico
-INSERT INTO Gol VALUES (30,'91000000017',55);    -- Náutico
-INSERT INTO Gol VALUES (30,'91100000011',61);    -- Ceará 
-INSERT INTO Cartao VALUES (30,25,'vermelho',90);
-
+INSERT INTO1 Partida VALUES
+(20, 2, 5, 2, 7, '93000000003', 3, '2024-03-21','18:00', 2, 1);
+INSERT INTO Gol VALUES (20,'91000000011',10);    -- Náutico
+INSERT INTO Gol VALUES (20,'91000000017',55);    -- Náutico
+INSERT INTO Gol VALUES (20,'91100000011',61);    -- Ceará 
+INSERT INTO Cartao VALUES (20,25,'vermelho',90);
