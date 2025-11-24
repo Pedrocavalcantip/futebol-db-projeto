@@ -13,6 +13,7 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000008','Jogador 8','Brasil','1995-08-04'),
 ('91000000009','Jogador 9','Brasil','1998-09-18'),
 ('91000000010','Jogador 10','Brasil','1997-10-03'),
+('91000000090','Jogador 90','Brasil','1997-10-03'),
 
 -- Jogadores 11–20 (Náutico)
 ('91000000011','Jogador 11','Brasil','1998-01-05'),
@@ -25,6 +26,7 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000018','Jogador 18','Brasil','1995-08-04'),
 ('91000000019','Jogador 19','Brasil','1998-09-18'),
 ('91000000020','Jogador 20','Brasil','1997-10-03'),
+('91000000091','Jogador 91','Brasil','1997-10-03'),
 
 -- Jogadores 21–30 (Santa Cruz)
 ('91000000021','Jogador 21','Brasil','1998-01-05'),
@@ -49,6 +51,7 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000038','Jogador 38','Brasil','1995-08-04'),
 ('91000000039','Jogador 39','Brasil','1998-09-18'),
 ('91000000040','Jogador 40','Brasil','1997-10-03'),
+('91000000095','Jogador 95','Brasil','1998-05-25'),
 
 -- Jogadores 41–50 (Central)
 ('91000000041','Jogador 41','Brasil','1998-01-05'),
@@ -73,6 +76,7 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91100000008','Jogador Bahia 8','Brasil','1998-08-30'),
 ('91100000009','Jogador Bahia 9','Brasil','1997-09-12'),
 ('91100000010','Jogador Bahia 10','Brasil','1996-10-28'),
+('91100000092','Jogador Bahia 92','Brasil','1996-10-28'),
 
 -- Jogadores 61–70 (Ceará)
 ('91100000011','Jogador Ceará 1','Brasil','1998-01-14'),
@@ -176,6 +180,7 @@ INSERT INTO Jogador VALUES
 ('91000000008',  8, 16, TRUE,  TRUE,  FALSE, 4, 5, NULL),
 ('91000000009',  9, 17, FALSE, TRUE,  TRUE, NULL, 4, 12),
 ('91000000010', 10, 18, FALSE, TRUE,  TRUE, NULL, 3, 14);
+('91000000090', 10, 18, FALSE, TRUE,  TRUE, NULL, 3, 14);
 
 -- Grupo 2 – Náutico (11–20) → patrocinados 19–28, cartões 11–20
 INSERT INTO Jogador VALUES
@@ -189,6 +194,7 @@ INSERT INTO Jogador VALUES
 ('91000000018',18,26, TRUE, TRUE, FALSE, 3, 6, NULL),
 ('91000000019',19,27, FALSE, TRUE, TRUE, NULL, 4, 13),
 ('91000000020',20,28, FALSE, TRUE, TRUE, NULL, 5, 11);
+('91000000091',20,28, FALSE, TRUE, TRUE, NULL, 5, 11);
 
 -- Grupo 3 – Santa Cruz (21–30) → patrocinados 29–38, cartões 21–30
 INSERT INTO Jogador VALUES
@@ -215,6 +221,7 @@ INSERT INTO Jogador VALUES
 ('91000000038',38,46, TRUE, TRUE, FALSE, 5, 4, NULL),
 ('91000000039',39,47, FALSE, TRUE, TRUE, NULL, 5, 13),
 ('91000000040',40,48, FALSE, TRUE, TRUE, NULL, 6, 10);
+('91000000095',40,48, FALSE, TRUE, TRUE, NULL, 6, 10);
 
 -- Grupo 5 – Central (41–50) → patrocinados 49–58, cartões 41–50
 INSERT INTO Jogador VALUES
@@ -241,6 +248,7 @@ INSERT INTO Jogador VALUES
 ('91100000008',66,66, TRUE, TRUE, FALSE, 4, 4, NULL),
 ('91100000009',67,67, FALSE, TRUE, TRUE, NULL, 4, 10),
 ('91100000010',68,68, FALSE, TRUE, TRUE, NULL, 5, 9);
+('91100000092',68,68, FALSE, TRUE, TRUE, NULL, 5, 9);
 
 -- Grupo 7 – Ceará (61–70) → patrocinados 69–78, cartões 69–78
 INSERT INTO Jogador VALUES
@@ -315,6 +323,7 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (8,'2024-03-15','2027-03-15'),
 (9,'2024-04-15','2027-04-15'),
 (10,'2024-05-15','2027-05-15'),
+(101,'2024-06-15','2025-06-15'),
 (11,'2024-06-01','2026-06-01'),
 (12,'2024-07-01','2026-07-01'),
 (13,'2024-08-01','2026-08-01'),
@@ -325,7 +334,7 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (18,'2024-06-15','2027-06-15'),
 (19,'2024-07-15','2027-07-15'),
 (20,'2024-08-15','2027-08-15'),
-
+(102,'2024-09-15','2025-09-15'),
 (21,'2024-01-01','2026-01-01'),
 (22,'2024-01-02','2026-01-02'),
 (23,'2024-01-03','2026-01-03'),
@@ -346,7 +355,7 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (38,'2024-01-18','2026-01-18'),
 (39,'2024-01-19','2026-01-19'),
 (40,'2024-01-20','2026-01-20'),
-
+(102,'2024-01-21','2026-01-21'),
 (41,'2024-02-01','2026-02-01'),
 (42,'2024-02-02','2026-02-02'),
 (43,'2024-02-03','2026-02-03'),
@@ -368,6 +377,7 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (58,'2024-03-08','2026-03-08'),
 (59,'2024-03-09','2026-03-09'),
 (60,'2024-03-10','2026-03-10'),
+(103,'2024-03-11','2025-03-11'),
 (61,'2024-03-11','2026-03-11'),
 (62,'2024-03-12','2026-03-12'),
 (63,'2024-03-13','2026-03-13'),
@@ -427,6 +437,7 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (8,'91000000008',1,50000),
 (9,'91000000009',1,47000),
 (10,'91000000010',1,46000),
+(101,'91000000090',1,46000),
 
 -- NÁUTICO (11–20)
 (11,'91000000011',2,53000),
@@ -439,6 +450,7 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (18,'91000000018',2,48000),
 (19,'91000000019',2,47000),
 (20,'91000000020',2,46000),
+(102,'91000000091',2,46000),
 
 -- SANTA CRUZ (21–30)
 (21,'91000000021',3,54000),
@@ -463,6 +475,7 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (38,'91000000038',4,50000),
 (39,'91000000039',4,48000),
 (40,'91000000040',4,47000),
+(103,'91000000095',4,47000),
 
 -- CENTRAL (41–50)
 (41,'91000000041',5,48000),
@@ -487,6 +500,7 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (58,'91100000008',6,52000),
 (59,'91100000009',6,51000),
 (60,'91100000010',6,50500),
+(102,'91100000092',6,50000),
 
 -- CEARÁ (61–70)
 (61,'91100000011',7,62000),
