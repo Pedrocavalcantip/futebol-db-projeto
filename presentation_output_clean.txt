@@ -1,0 +1,267 @@
+﻿Conexão estabelecida com sucesso.
+
+[AutoRun] Executando opção 1
+
+=== Artilheiro do Campeonato Pernambucano ===
+Jogador 1 - 4 gols
+
+[AutoRun] Executando opção 2
+
+=== Classificação - Campeonato Pernambucano ===
+Clube | Pontos | Vitórias | Empates | Derrotas | GP | GC | Saldo
+Sport Club do Recife | 12 | 4 | 0 | 0 | 9 | 1 | 8
+Retrô Futebol Clube Brasil | 5 | 1 | 2 | 1 | 4 | 3 | 1
+Santa Cruz Futebol Clube | 3 | 0 | 3 | 1 | 6 | 8 | -2
+Clube Náutico Capibaribe | 3 | 0 | 3 | 1 | 4 | 6 | -2
+Central Sport Club | 2 | 0 | 2 | 2 | 3 | 8 | -5
+
+[AutoRun] Executando opção 3
+
+=== Juízes com mais cartões aplicados ===
+Juiz 3 (93000000003) - 5 cartões
+Juiz 1 (93000000001) - 4 cartões
+Juiz 2 (93000000002) - 4 cartões
+
+[AutoRun] Executando opção 4
+
+=== Jogadores mais indisciplinados ===
+Jogador 18 - 2 cartões
+Jogador 23 - 2 cartões
+Jogador 39 - 1 cartões
+
+[AutoRun] Executando opção 5
+
+=== Melhores ataques Geral (gols marcados) ===
+Sport Club do Recife - 23 gols
+Clube Náutico Capibaribe - 10 gols
+Santa Cruz Futebol Clube - 6 gols
+
+[AutoRun] Executando opção 6
+
+=== Melhores defesas Geral (menos gols sofridos) ===
+Retrô Futebol Clube Brasil - 3 gols sofridos
+Sport Club do Recife - 4 gols sofridos
+Fortaleza Esporte Clube - 4 gols sofridos
+
+[AutoRun] Executando opção 7
+
+=== Clubes com maior folha salarial da temporada ===
+Fortaleza Esporte Clube - R$ 585000.00
+Esporte Clube Bahia - R$ 575500.00
+Ceará Sporting Club - R$ 556000.00
+
+[AutoRun] Executando opção 8
+
+=== Maiores patrocínios (por clube) ===
+Esporte Clube Bahia - R$ 1450000.00
+Ceará Sporting Club - R$ 1240000.00
+Sport Club do Recife - R$ 1200000.00
+
+[AutoRun] Executando opção 9
+
+=== Contratos ativos - Sport Club do Recife ===
+Jogador 91000000001 | Clube 1 | 2024-01-01 a 2026-01-01 | R$ 55000.00
+Jogador 91000000002 | Clube 1 | 2024-02-01 a 2026-02-01 | R$ 52000.00
+Jogador 91000000003 | Clube 1 | 2024-03-01 a 2026-03-01 | R$ 51000.00
+Jogador 91000000004 | Clube 1 | 2024-04-01 a 2026-04-01 | R$ 50000.00
+Jogador 91000000005 | Clube 1 | 2024-05-01 a 2026-05-01 | R$ 49000.00
+Jogador 91000000006 | Clube 1 | 2024-01-15 a 2027-01-15 | R$ 48000.00
+Jogador 91000000007 | Clube 1 | 2024-02-15 a 2027-02-15 | R$ 53000.00
+Jogador 91000000008 | Clube 1 | 2024-03-15 a 2027-03-15 | R$ 50000.00
+Jogador 91000000009 | Clube 1 | 2024-04-15 a 2027-04-15 | R$ 47000.00
+Jogador 91000000010 | Clube 1 | 2024-05-15 a 2027-05-15 | R$ 46000.00
+
+[AutoRun] Executando opção 10
+
+=== Gols por jogador (Recife-PE, Copa do Nordeste) ===
+Jogador 1 - 4 gols
+Jogador 7 - 4 gols
+Jogador Ceará 1 - 4 gols
+Jogador 2 - 3 gols
+Jogador 11 - 2 gols
+
+[AutoRun] Executando opção 11
+
+=== Estatísticas financeiras por clube ===
+Clube | Jogadores | Folha Total | Média Salarial
+Fortaleza Esporte Clube | 10 | 585000.00 | 58500.00
+Ceará Sporting Club | 10 | 556000.00 | 55600.00
+Retrô Futebol Clube Brasil | 11 | 534500.00 | 48590.91
+Esporte Clube Bahia | 10 | 525500.00 | 52550.00
+Sport Club do Recife | 10 | 501000.00 | 50100.00
+Santa Cruz Futebol Clube | 10 | 500500.00 | 50050.00
+Clube Náutico Capibaribe | 10 | 497000.00 | 49700.00
+Central Sport Club | 10 | 481000.00 | 48100.00
+
+[AutoRun] Executando opção 12
+
+=== Técnicos de clubes considerados 'ricos' (Folha Ativa > 530k) ===
+Técnico Retrô - Retrô Futebol Clube Brasil
+Técnico Ceará - Ceará Sporting Club
+Técnico Fortaleza - Fortaleza Esporte Clube
+
+[AutoRun] Executando opção 13
+
+=== Súmula(s) de partidas ===
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 1 - 2024-01-10 - Estádio: Ilha do Retiro
+Sport Club do Recife 2 x 0 Clube Náutico Capibaribe  (Vitória Mandante)
+Árbitro: Juiz 1
+Cartões:
+- Jogador 11 | amarelo aos 30'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 2 - 2024-01-11 - Estádio: Estádio do Arruda
+Santa Cruz Futebol Clube 1 x 1 Retrô Futebol Clube Brasil  (Empate)
+Árbitro: Juiz 2
+Cartões:
+- Jogador 23 | amarelo aos 55'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 3 - 2024-01-17 - Estádio: Lacerdão
+Central Sport Club 0 x 3 Sport Club do Recife  (Vitória Visitante)
+Árbitro: Juiz 3
+Cartões:
+- Jogador 35 | amarelo aos 22'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 4 - 2024-01-18 - Estádio: Estádio dos Aflitos
+Clube Náutico Capibaribe 2 x 2 Santa Cruz Futebol Clube  (Empate)
+Árbitro: Juiz 4
+Cartões:
+- Jogador 14 | vermelho aos 80'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 5 - 2024-01-24 - Estádio: Arena de Pernambuco
+Retrô Futebol Clube Brasil 0 x 1 Sport Club do Recife  (Vitória Visitante)
+Árbitro: Juiz 5
+Cartões:
+- Jogador 44 | amarelo aos 55'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 6 - 2024-01-25 - Estádio: Lacerdão
+Central Sport Club 1 x 1 Clube Náutico Capibaribe  (Empate)
+Árbitro: Juiz 1
+Cartões:
+- Jogador 32 | amarelo aos 70'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 7 - 2024-01-31 - Estádio: Ilha do Retiro
+Sport Club do Recife 3 x 1 Santa Cruz Futebol Clube  (Vitória Mandante)
+Árbitro: Juiz 3
+Cartões:
+- Jogador 23 | vermelho aos 88'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 8 - 2024-02-01 - Estádio: Arena de Pernambuco
+Retrô Futebol Clube Brasil 2 x 0 Central Sport Club  (Vitória Mandante)
+Árbitro: Juiz 4
+Cartões:
+- Jogador 39 | amarelo aos 45'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 9 - 2024-02-07 - Estádio: Estádio dos Aflitos
+Clube Náutico Capibaribe 1 x 1 Retrô Futebol Clube Brasil  (Empate)
+Árbitro: Juiz 5
+Cartões:
+- Jogador 18 | amarelo aos 77'
+
+----------------------------------------
+Campeonato: Campeonato Pernambucano
+Partida: 10 - 2024-02-10 - Estádio: Estádio do Arruda
+Santa Cruz Futebol Clube 2 x 2 Central Sport Club  (Empate)
+Árbitro: Juiz 2
+Cartões:
+- Jogador 29 | amarelo aos 63'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 11 - 2024-03-01 - Estádio: Ilha do Retiro
+Sport Club do Recife 3 x 1 Clube Náutico Capibaribe  (Vitória Mandante)
+Árbitro: Juiz 1
+Cartões:
+- Jogador 12 | amarelo aos 45'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 12 - 2024-03-02 - Estádio: Estádio do Arruda
+Esporte Clube Bahia 1 x 1 Ceará Sporting Club  (Empate)
+Árbitro: Juiz 2
+Cartões:
+- Jogador 47 | amarelo aos 22'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 13 - 2024-03-05 - Estádio: Arena de Pernambuco
+Fortaleza Esporte Clube 0 x 2 Sport Club do Recife  (Vitória Visitante)
+Árbitro: Juiz 3
+Cartões:
+- Jogador 48 | amarelo aos 33'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 14 - 2024-03-06 - Estádio: Estádio dos Aflitos
+Clube Náutico Capibaribe 1 x 0 Esporte Clube Bahia  (Vitória Mandante)
+Árbitro: Juiz 4
+Cartões:
+- Jogador 16 | amarelo aos 77'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 15 - 2024-03-10 - Estádio: Ilha do Retiro
+Sport Club do Recife 2 x 1 Ceará Sporting Club  (Vitória Mandante)
+Árbitro: Juiz 5
+Cartões:
+- Jogador 7 | amarelo aos 35'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 16 - 2024-03-11 - Estádio: Lacerdão
+Esporte Clube Bahia 0 x 2 Fortaleza Esporte Clube  (Vitória Visitante)
+Árbitro: Juiz 3
+Cartões:
+- Jogador 50 | amarelo aos 20'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 17 - 2024-03-15 - Estádio: Estádio do Arruda
+Ceará Sporting Club 1 x 3 Sport Club do Recife  (Vitória Visitante)
+Árbitro: Juiz 4
+Cartões:
+- Jogador 34 | amarelo aos 66'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 18 - 2024-03-16 - Estádio: Arena de Pernambuco
+Fortaleza Esporte Clube 2 x 2 Clube Náutico Capibaribe  (Empate)
+Árbitro: Juiz 1
+Cartões:
+- Jogador 18 | amarelo aos 77'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 19 - 2024-03-20 - Estádio: Ilha do Retiro
+Sport Club do Recife 4 x 0 Esporte Clube Bahia  (Vitória Mandante)
+Árbitro: Juiz 2
+Cartões:
+- Jogador 41 | amarelo aos 32'
+
+----------------------------------------
+Campeonato: Copa do Nordeste
+Partida: 20 - 2024-03-21 - Estádio: Estádio dos Aflitos
+Clube Náutico Capibaribe 2 x 1 Ceará Sporting Club  (Vitória Mandante)
+Árbitro: Juiz 3
+Cartões:
+- Jogador 25 | vermelho aos 90'
+Conexão fechada (modo não-interativo).
+

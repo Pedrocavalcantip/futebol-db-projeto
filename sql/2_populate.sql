@@ -15,6 +15,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000010','Jogador 10','Brasil','1997-10-03'),
 ('91000000090','Jogador 90','Brasil','1997-10-03'),
 
+
+
+
 -- Jogadores 11–20 (Náutico)
 ('91000000011','Jogador 11','Brasil','1998-01-05'),
 ('91000000012','Jogador 12','Brasil','1997-02-10'),
@@ -28,6 +31,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000020','Jogador 20','Brasil','1997-10-03'),
 ('91000000091','Jogador 91','Brasil','1997-10-03'),
 
+
+
+
 -- Jogadores 21–30 (Santa Cruz)
 ('91000000021','Jogador 21','Brasil','1998-01-05'),
 ('91000000022','Jogador 22','Brasil','1997-02-10'),
@@ -39,6 +45,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000028','Jogador 28','Brasil','1995-08-04'),
 ('91000000029','Jogador 29','Brasil','1998-09-18'),
 ('91000000030','Jogador 30','Brasil','1997-10-03'),
+
+
+
 
 -- Jogadores 31–40 (Retrô)
 ('91000000031','Jogador 31','Brasil','1998-01-05'),
@@ -53,6 +62,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000040','Jogador 40','Brasil','1997-10-03'),
 ('91000000095','Jogador 95','Brasil','1998-05-25'),
 
+
+
+
 -- Jogadores 41–50 (Central)
 ('91000000041','Jogador 41','Brasil','1998-01-05'),
 ('91000000042','Jogador 42','Brasil','1997-02-10'),
@@ -64,6 +76,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91000000048','Jogador 48','Brasil','1995-08-04'),
 ('91000000049','Jogador 49','Brasil','1998-09-18'),
 ('91000000050','Jogador 50','Brasil','1997-10-03'),
+
+
+
 
 -- Jogadores 51–60 (Bahia)
 ('91100000001','Jogador Bahia 1','Brasil','1997-01-05'),
@@ -78,6 +93,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91100000010','Jogador Bahia 10','Brasil','1996-10-28'),
 ('91100000092','Jogador Bahia 92','Brasil','1996-10-28'),
 
+
+
+
 -- Jogadores 61–70 (Ceará)
 ('91100000011','Jogador Ceará 1','Brasil','1998-01-14'),
 ('91100000012','Jogador Ceará 2','Brasil','1997-02-19'),
@@ -89,6 +107,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91100000018','Jogador Ceará 8','Brasil','1998-08-27'),
 ('91100000019','Jogador Ceará 9','Brasil','1997-09-03'),
 ('91100000020','Jogador Ceará 10','Brasil','1996-10-16'),
+
+
+
 
 -- Jogadores 71–80 (Fortaleza)
 ('91100000021','Jogador Fortaleza 1','Brasil','1998-01-20'),
@@ -102,6 +123,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('91100000029','Jogador Fortaleza 9','Brasil','1997-09-25'),
 ('91100000030','Jogador Fortaleza 10','Brasil','1996-10-14'),
 
+
+
+
 -- Técnicos (8)
 ('92000000001','Técnico Sport','Brasil','1975-01-01'),
 ('92000000002','Técnico Náutico','Brasil','1975-02-01'),
@@ -112,6 +136,9 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('92000000007','Técnico Ceará','Brasil','1975-07-01'),
 ('92000000008','Técnico Fortaleza','Brasil','1975-08-01'),
 
+
+
+
 -- Juízes (5)
 ('93000000001','Juiz 1','Brasil','1970-01-01'),
 ('93000000002','Juiz 2','Brasil','1970-01-02'),
@@ -119,8 +146,11 @@ INSERT INTO Pessoa (cpf, nome, nacionalidade, data_nascimento) VALUES
 ('93000000004','Juiz 4','Brasil','1970-01-04'),
 ('93000000005','Juiz 5','Brasil','1970-01-05');
 
+
+
+
 ------------------------------------------------------------
--- 2. PATROCINADOS (1–88) 
+-- 2. PATROCINADOS (1–88)
 -- 1–8 clubes, 9–88 jogadores
 ------------------------------------------------------------
 INSERT INTO Patrocinados (id_patrocinado) VALUES
@@ -132,7 +162,11 @@ INSERT INTO Patrocinados (id_patrocinado) VALUES
 (49),(50),(51),(52),(53),(54),(55),(56),(57),(58),
 (59),(60),(61),(62),(63),(64),(65),(66),(67),(68),
 (69),(70),(71),(72),(73),(74),(75),(76),(77),(78),
-(79),(80),(81),(82),(83),(84),(85),(86),(87),(88);
+(79),(80),(81),(82),(83),(84),(85),(86),(87),(88),
+(89),(90),(91),(92);
+
+
+
 
 ------------------------------------------------------------
 -- 3. POSSIVEIS_CARTOES (1–88)
@@ -147,7 +181,11 @@ INSERT INTO Possiveis_Cartoes (id_possiveis_cartoes) VALUES
 (49),(50),(51),(52),(53),(54),(55),(56),(57),(58),
 (59),(60),(61),(62),(63),(64),(65),(66),(67),(68),
 (69),(70),(71),(72),(73),(74),(75),(76),(77),(78),
-(79),(80),(81),(82),(83),(84),(85),(86),(87),(88);
+(79),(80),(81),(82),(83),(84),(85),(86),(87),(88),
+(89),(90),(91),(92);
+
+
+
 
 ------------------------------------------------------------
 -- 4. CLUBES (5 de PE + 3 de fora)
@@ -162,11 +200,17 @@ INSERT INTO Clube (id_clube, id_patrocinado, nome, data_fundacao, cidade) VALUES
 (7, 7, 'Ceará Sporting Club',           '1914-06-02', 'Fortaleza-CE'),
 (8, 8, 'Fortaleza Esporte Clube',       '1918-10-18', 'Fortaleza-CE');
 
+
+
+
 ------------------------------------------------------------
 -- 5. JOGADORES
 -- cpf, id_possiveis_cartoes, id_patrocinado,
 -- atacante, meio_campo, defensor, gols, assistencias, desarmes
 ------------------------------------------------------------
+
+
+
 
 -- Grupo 1 – Sport (1–10) → patrocinados 9–18, cartões 1–10
 INSERT INTO Jogador VALUES
@@ -179,8 +223,11 @@ INSERT INTO Jogador VALUES
 ('91000000007',  7, 15, TRUE,  TRUE,  FALSE, 6, 3, NULL),
 ('91000000008',  8, 16, TRUE,  TRUE,  FALSE, 4, 5, NULL),
 ('91000000009',  9, 17, FALSE, TRUE,  TRUE, NULL, 4, 12),
-('91000000010', 10, 18, FALSE, TRUE,  TRUE, NULL, 3, 14);
-('91000000090', 10, 18, FALSE, TRUE,  TRUE, NULL, 3, 14);
+('91000000010', 10, 18, FALSE, TRUE,  TRUE, NULL, 3, 14),
+('91000000090', 89, 89, FALSE, TRUE,  TRUE, NULL, 3, 14);
+
+
+
 
 -- Grupo 2 – Náutico (11–20) → patrocinados 19–28, cartões 11–20
 INSERT INTO Jogador VALUES
@@ -193,8 +240,11 @@ INSERT INTO Jogador VALUES
 ('91000000017',17,25, TRUE, TRUE, FALSE, 6, 4, NULL),
 ('91000000018',18,26, TRUE, TRUE, FALSE, 3, 6, NULL),
 ('91000000019',19,27, FALSE, TRUE, TRUE, NULL, 4, 13),
-('91000000020',20,28, FALSE, TRUE, TRUE, NULL, 5, 11);
-('91000000091',20,28, FALSE, TRUE, TRUE, NULL, 5, 11);
+('91000000020',20,28, FALSE, TRUE, TRUE, NULL, 5, 11),
+('91000000091',91,91, FALSE, TRUE, TRUE, NULL, 5, 11);
+
+
+
 
 -- Grupo 3 – Santa Cruz (21–30) → patrocinados 29–38, cartões 21–30
 INSERT INTO Jogador VALUES
@@ -209,6 +259,9 @@ INSERT INTO Jogador VALUES
 ('91000000029',29,37, FALSE, TRUE, TRUE, NULL, 6, 11),
 ('91000000030',30,38, FALSE, TRUE, TRUE, NULL, 4, 15);
 
+
+
+
 -- Grupo 4 – Retrô (31–40) → patrocinados 39–48, cartões 31–40
 INSERT INTO Jogador VALUES
 ('91000000031',31,39, TRUE, FALSE, FALSE, 7,  NULL, NULL),
@@ -220,8 +273,11 @@ INSERT INTO Jogador VALUES
 ('91000000037',37,45, TRUE, TRUE, FALSE, 6, 2, NULL),
 ('91000000038',38,46, TRUE, TRUE, FALSE, 5, 4, NULL),
 ('91000000039',39,47, FALSE, TRUE, TRUE, NULL, 5, 13),
-('91000000040',40,48, FALSE, TRUE, TRUE, NULL, 6, 10);
-('91000000095',40,48, FALSE, TRUE, TRUE, NULL, 6, 10);
+('91000000040',40,48, FALSE, TRUE, TRUE, NULL, 6, 10),
+('91000000095',90,90, FALSE, TRUE, TRUE, NULL, 6, 10);
+
+
+
 
 -- Grupo 5 – Central (41–50) → patrocinados 49–58, cartões 41–50
 INSERT INTO Jogador VALUES
@@ -236,6 +292,9 @@ INSERT INTO Jogador VALUES
 ('91000000049',49,57, FALSE, TRUE, TRUE, NULL, 4, 16),
 ('91000000050',50,58, FALSE, TRUE, TRUE, NULL, 5, 11);
 
+
+
+
 -- Grupo 6 – Bahia (51–60) → patrocinados 59–68, cartões 59–68
 INSERT INTO Jogador VALUES
 ('91100000001',59,59, TRUE, FALSE, FALSE, 8,  NULL, NULL),
@@ -247,8 +306,11 @@ INSERT INTO Jogador VALUES
 ('91100000007',65,65, TRUE, TRUE, FALSE, 5, 3, NULL),
 ('91100000008',66,66, TRUE, TRUE, FALSE, 4, 4, NULL),
 ('91100000009',67,67, FALSE, TRUE, TRUE, NULL, 4, 10),
-('91100000010',68,68, FALSE, TRUE, TRUE, NULL, 5, 9);
-('91100000092',68,68, FALSE, TRUE, TRUE, NULL, 5, 9);
+('91100000010',68,68, FALSE, TRUE, TRUE, NULL, 5, 9),
+('91100000092',92,92, FALSE, TRUE, TRUE, NULL, 5, 9);
+
+
+
 
 -- Grupo 7 – Ceará (61–70) → patrocinados 69–78, cartões 69–78
 INSERT INTO Jogador VALUES
@@ -263,6 +325,9 @@ INSERT INTO Jogador VALUES
 ('91100000019',77,77, FALSE, TRUE, TRUE, NULL, 5, 11),
 ('91100000020',78,78, FALSE, TRUE, TRUE, NULL, 4, 10);
 
+
+
+
 -- Grupo 8 – Fortaleza (71–80) → patrocinados 79–88, cartões 79–88
 INSERT INTO Jogador VALUES
 ('91100000021',79,79, TRUE, FALSE, FALSE, 10, NULL, NULL),
@@ -275,6 +340,9 @@ INSERT INTO Jogador VALUES
 ('91100000028',86,86, TRUE, TRUE, FALSE, 6, 5, NULL),
 ('91100000029',87,87, FALSE, TRUE, TRUE, NULL, 5, 12),
 ('91100000030',88,88, FALSE, TRUE, TRUE, NULL, 4, 11);
+
+
+
 
 ------------------------------------------------------------
 -- 6. TÉCNICOS (8) – id_possiveis_cartoes 51–58
@@ -289,6 +357,9 @@ INSERT INTO Tecnico (cpf, id_possiveis_cartoes, id_clube, licenca) VALUES
 ('92000000007', 57, 7, 'Licença PRO'),
 ('92000000008', 58, 8, 'Licença PRO');
 
+
+
+
 ------------------------------------------------------------
 -- 7. JUÍZES (5)
 ------------------------------------------------------------
@@ -299,6 +370,9 @@ INSERT INTO Juiz (cpf, registro_federacao) VALUES
 ('93000000004', 'CBF-2024-04'),
 ('93000000005', 'CBF-2024-05');
 
+
+
+
 ------------------------------------------------------------
 -- 8. PATROCINADORES
 ------------------------------------------------------------
@@ -308,6 +382,9 @@ INSERT INTO Patrocinador (id_patrocinador, nome_patrocinador) VALUES
 (3, 'Caixa'),
 (4, 'NeoEnergia'),
 (5, 'Brahma');
+
+
+
 
 ------------------------------------------------------------    
 -- 9. CONTRATOS (1–100)
@@ -324,6 +401,10 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (9,'2024-04-15','2027-04-15'),
 (10,'2024-05-15','2027-05-15'),
 (101,'2024-06-15','2025-06-15'),
+
+
+
+
 (11,'2024-06-01','2026-06-01'),
 (12,'2024-07-01','2026-07-01'),
 (13,'2024-08-01','2026-08-01'),
@@ -335,6 +416,10 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (19,'2024-07-15','2027-07-15'),
 (20,'2024-08-15','2027-08-15'),
 (102,'2024-09-15','2025-09-15'),
+
+
+
+
 (21,'2024-01-01','2026-01-01'),
 (22,'2024-01-02','2026-01-02'),
 (23,'2024-01-03','2026-01-03'),
@@ -345,6 +430,10 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (28,'2024-01-08','2026-01-08'),
 (29,'2024-01-09','2026-01-09'),
 (30,'2024-01-10','2026-01-10'),
+
+
+
+
 (31,'2024-01-11','2026-01-11'),
 (32,'2024-01-12','2026-01-12'),
 (33,'2024-01-13','2026-01-13'),
@@ -355,7 +444,11 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (38,'2024-01-18','2026-01-18'),
 (39,'2024-01-19','2026-01-19'),
 (40,'2024-01-20','2026-01-20'),
-(102,'2024-01-21','2026-01-21'),
+(103,'2024-01-21','2026-01-21'),
+
+
+
+
 (41,'2024-02-01','2026-02-01'),
 (42,'2024-02-02','2026-02-02'),
 (43,'2024-02-03','2026-02-03'),
@@ -367,6 +460,9 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (49,'2024-02-09','2026-02-09'),
 (50,'2024-02-10','2026-02-10'),
 
+
+
+
 (51,'2024-03-01','2026-03-01'),
 (52,'2024-03-02','2026-03-02'),
 (53,'2024-03-03','2026-03-03'),
@@ -377,7 +473,11 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (58,'2024-03-08','2026-03-08'),
 (59,'2024-03-09','2026-03-09'),
 (60,'2024-03-10','2026-03-10'),
-(103,'2024-03-11','2025-03-11'),
+(104,'2024-03-11','2025-03-11'),
+
+
+
+
 (61,'2024-03-11','2026-03-11'),
 (62,'2024-03-12','2026-03-12'),
 (63,'2024-03-13','2026-03-13'),
@@ -389,6 +489,9 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (69,'2024-03-19','2026-03-19'),
 (70,'2024-03-20','2026-03-20'),
 
+
+
+
 (71,'2024-04-01','2026-04-01'),
 (72,'2024-04-02','2026-04-02'),
 (73,'2024-04-03','2026-04-03'),
@@ -399,6 +502,9 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (78,'2024-04-08','2026-04-08'),
 (79,'2024-04-09','2026-04-09'),
 (80,'2024-04-10','2026-04-10'),
+
+
+
 
 (81,'2024-05-01','2026-05-01'),
 (82,'2024-05-02','2025-05-02'),
@@ -422,6 +528,12 @@ INSERT INTO Contrato (id_contrato, data_inicio, data_fim) VALUES
 (100,'2024-05-20','2025-05-20');
 
 
+
+
+
+
+
+
 ------------------------------------------------------------
 -- 9. CONTRATO_JOGADOR – 80 jogadores
 ------------------------------------------------------------
@@ -439,6 +551,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (10,'91000000010',1,46000),
 (101,'91000000090',1,46000),
 
+
+
+
 -- NÁUTICO (11–20)
 (11,'91000000011',2,53000),
 (12,'91000000012',2,51000),
@@ -452,6 +567,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (20,'91000000020',2,46000),
 (102,'91000000091',2,46000),
 
+
+
+
 -- SANTA CRUZ (21–30)
 (21,'91000000021',3,54000),
 (22,'91000000022',3,50000),
@@ -463,6 +581,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (28,'91000000028',3,50000),
 (29,'91000000029',3,47000),
 (30,'91000000030',3,46000),
+
+
+
 
 -- RETRÔ (31–40)
 (31,'91000000031',4,49000),
@@ -477,6 +598,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (40,'91000000040',4,47000),
 (103,'91000000095',4,47000),
 
+
+
+
 -- CENTRAL (41–50)
 (41,'91000000041',5,48000),
 (42,'91000000042',5,46000),
@@ -489,6 +613,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (49,'91000000049',5,47000),
 (50,'91000000050',5,46000),
 
+
+
+
 -- BAHIA (51–60)
 (51,'91100000001',6,60000),
 (52,'91100000002',6,58000),
@@ -500,7 +627,10 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (58,'91100000008',6,52000),
 (59,'91100000009',6,51000),
 (60,'91100000010',6,50500),
-(102,'91100000092',6,50000),
+(104,'91100000092',6,50000),
+
+
+
 
 -- CEARÁ (61–70)
 (61,'91100000011',7,62000),
@@ -514,6 +644,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (69,'91100000019',7,55000),
 (70,'91100000020',7,54000),
 
+
+
+
 -- FORTALEZA (71–80)
 (71,'91100000021',8,65000),
 (72,'91100000022',8,63000),
@@ -525,6 +658,9 @@ INSERT INTO Contrato_Jogador (id_contrato, cpf_jogador, id_clube, salario) VALUE
 (78,'91100000028',8,62000),
 (79,'91100000029',8,58000),
 (80,'91100000030',8,56000);
+
+
+
 
 ------------------------------------------------------------
 -- 10. CONTRATOS DE PATROCÍNIO (81–100)
@@ -552,12 +688,18 @@ INSERT INTO Contrato_Patrocinio (id_contrato, id_patrocinado, id_patrocinador, v
 (99, 64, 1,  65000),
 (100,65, 2, 60000);
 
+
+
+
 ------------------------------------------------------------
 -- 11. CAMPEONATOS
 ------------------------------------------------------------
 INSERT INTO Campeonato (id_campeonato, nome, temporada, regulamento) VALUES
-(1, 'Campeonato Pernambucano', '2024', 'Turno único com 5 clubes de Pernambuco.'),
-(2, 'Copa do Nordeste',        '2024', 'Turno único com 5 clubes (2 de PE e 3 de fora).');
+    (1, 'Campeonato Pernambucano', '2024', 'Turno único com 5 clubes de Pernambuco.'),
+    (2, 'Copa do Nordeste',        '2024', 'Turno único com 5 clubes (2 de PE e 3 de fora).');
+
+
+
 
 ------------------------------------------------------------
 -- 12. PARTICIPA (5 clubes por campeonato)
@@ -566,40 +708,50 @@ INSERT INTO Campeonato (id_campeonato, nome, temporada, regulamento) VALUES
 INSERT INTO Participa (id_clube, id_campeonato) VALUES
 (1,1),(2,1),(3,1),(4,1),(5,1);
 
+
+
+
 -- Copa do Nordeste: Sport, Náutico, Bahia, Ceará, Fortaleza
 INSERT INTO Participa (id_clube, id_campeonato) VALUES
 (1,2),(2,2),(6,2),(7,2),(8,2);
+
+
+
 
 ------------------------------------------------------------
 -- 13. RODADAS (5 por campeonato)
 ------------------------------------------------------------
 INSERT INTO Rodada (numero_rodada, id_campeonato) VALUES
-(1,1),(2,1),(3,1),(4,1),(5,1),
-(1,2),(2,2),(3,2),(4,2),(5,2);
+    (1,1),(2,1),(3,1),(4,1),(5,1),
+    (1,2),(2,2),(3,2),(4,2),(5,2);
+
+
+
 
 ------------------------------------------------------------
 -- 14. ESTÁDIOS
 ------------------------------------------------------------
 INSERT INTO Estadio (id_estadio, nome, cidade, capacidade) VALUES
-(1, 'Arena de Pernambuco', 'São Lourenço da Mata-PE', 46000),
-(2, 'Ilha do Retiro',      'Recife-PE',               32000),
-(3, 'Estádio dos Aflitos', 'Recife-PE',               19000),
-(4, 'Estádio do Arruda',   'Recife-PE',               60000),
-(5, 'Lacerdão',            'Caruaru-PE',              18000);
+    (1, 'Arena de Pernambuco', 'São Lourenço da Mata-PE', 46000),
+    (2, 'Ilha do Retiro',      'Recife-PE',               32000),
+    (3, 'Estádio dos Aflitos', 'Recife-PE',               19000),
+    (4, 'Estádio do Arruda',   'Recife-PE',               60000),
+    (5, 'Lacerdão',            'Caruaru-PE',              18000);
+
+
+
 
 ------------------------------------------------------------
--- 15. PARTIDAS + GOLS + CARTÕES
--- 15.1 CAMPEONATO PERNAMBUCANO (id_campeonato = 1)
--- Times: 1(Sport),2(Náutico),3(Santa),4(Retrô),5(Central)
-------------------------------------------------------------
-
----------------- RODADA 1 ----------------
--- Partida 1: Sport 2 x 0 Náutico
+-----------------------------------------------------------
+-- 16. COPA DO NORDESTE (id_campeonato = 2)
 INSERT INTO Partida VALUES
 (1, 1, 1, 1, 2, '93000000001', 2, '2024-01-10','16:00', 2, 0);
 INSERT INTO Gol VALUES (1,'91000000001',12);
 INSERT INTO Gol VALUES (1,'91000000007',55);
 INSERT INTO Cartao VALUES (1,11,'amarelo',30);
+
+
+
 
 -- Partida 2: Santa Cruz 1 x 1 Retrô
 INSERT INTO Partida VALUES
@@ -607,6 +759,9 @@ INSERT INTO Partida VALUES
 INSERT INTO Gol VALUES (2,'91000000023',40);
 INSERT INTO Gol VALUES (2,'91000000037',70);
 INSERT INTO Cartao VALUES (2,23,'amarelo',55);
+
+
+
 
 ---------------- RODADA 2 ----------------
 -- Partida 3: Central 0 x 3 Sport
@@ -617,6 +772,9 @@ INSERT INTO Gol VALUES (3,'91000000002',28);
 INSERT INTO Gol VALUES (3,'91000000007',60);
 INSERT INTO Cartao VALUES (3,35,'amarelo',22);
 
+
+
+
 -- Partida 4: Náutico 2 x 2 Santa Cruz
 INSERT INTO Partida VALUES
 (4, 1, 2, 2, 3, '93000000004', 3, '2024-01-18','19:00', 2, 2);
@@ -626,6 +784,9 @@ INSERT INTO Gol VALUES (4,'91000000023',66);
 INSERT INTO Gol VALUES (4,'91000000024',74);
 INSERT INTO Cartao VALUES (4,14,'vermelho',80);
 
+
+
+
 ---------------- RODADA 3 ----------------
 -- Partida 5: Retrô 0 x 1 Sport
 INSERT INTO Partida VALUES
@@ -633,12 +794,18 @@ INSERT INTO Partida VALUES
 INSERT INTO Gol VALUES (5,'91000000001',33);
 INSERT INTO Cartao VALUES (5,44,'amarelo',55);
 
+
+
+
 -- Partida 6: Central 1 x 1 Náutico
 INSERT INTO Partida VALUES
 (6, 1, 3, 5, 2, '93000000001', 5, '2024-01-25','18:00', 1, 1);
 INSERT INTO Gol VALUES (6,'91000000035',60);
 INSERT INTO Gol VALUES (6,'91000000012',10);
 INSERT INTO Cartao VALUES (6,32,'amarelo',70);
+
+
+
 
 ---------------- RODADA 4 ----------------
 -- Partida 7: Sport 3 x 1 Santa Cruz
@@ -650,12 +817,18 @@ INSERT INTO Gol VALUES (7,'91000000002',80);
 INSERT INTO Gol VALUES (7,'91000000023',33);
 INSERT INTO Cartao VALUES (7,23,'vermelho',88);
 
+
+
+
 -- Partida 8: Retrô 2 x 0 Central
 INSERT INTO Partida VALUES
 (8, 1, 4, 4, 5, '93000000004', 1, '2024-02-01','20:00', 2, 0);
 INSERT INTO Gol VALUES (8,'91000000037',20);
 INSERT INTO Gol VALUES (8,'91000000038',66);
 INSERT INTO Cartao VALUES (8,39,'amarelo',45);
+
+
+
 
 ---------------- RODADA 5 ----------------
 -- Partida 9: Náutico 1 x 1 Retrô
@@ -664,6 +837,9 @@ INSERT INTO Partida VALUES
 INSERT INTO Gol VALUES (9,'91000000012',22);
 INSERT INTO Gol VALUES (9,'91000000037',55);
 INSERT INTO Cartao VALUES (9,18,'amarelo',77);
+
+
+
 
 -- Partida 10: Santa Cruz 2 x 2 Central
 INSERT INTO Partida VALUES
@@ -674,10 +850,16 @@ INSERT INTO Gol VALUES (10,'91000000035',45);
 INSERT INTO Gol VALUES (10,'91000000041',72);
 INSERT INTO Cartao VALUES (10,29,'amarelo',63);
 
+
+
+
 -----------------------------------------------------------
 -- 16.2 COPA DO NORDESTE (id_campeonato = 2)
 -- Times: 1(Sport),2(Náutico),6(Bahia),7(Ceará),8(Fortaleza)
 ------------------------------------------------------------
+
+
+
 
 ---------------- RODADA 1 ----------------
 -- Partida 11: Sport 3 x 1 Náutico
@@ -689,12 +871,18 @@ INSERT INTO Gol VALUES (11,'91000000007',75);  -- Sport
 INSERT INTO Gol VALUES (11,'91000000011',60);  -- Náutico
 INSERT INTO Cartao VALUES (11,12,'amarelo',45);
 
+
+
+
 -- Partida 12: Bahia 1 x 1 Ceará
 INSERT INTO Partida VALUES
 (12, 2, 1, 6, 7, '93000000002', 4, '2024-03-02','18:00', 1, 1);
-INSERT INTO Gol VALUES (12,'91100000001',35);  -- Bahia 
-INSERT INTO Gol VALUES (12,'91100000011',70);  -- Ceará 
+INSERT INTO Gol VALUES (12,'91100000001',35);  -- Bahia
+INSERT INTO Gol VALUES (12,'91100000011',70);  -- Ceará
 INSERT INTO Cartao VALUES (12,47,'amarelo',22);
+
+
+
 
 ---------------- RODADA 2 ----------------
 -- Partida 13: Fortaleza 0 x 2 Sport
@@ -704,11 +892,17 @@ INSERT INTO Gol VALUES (13,'91000000001',15);  -- Sport
 INSERT INTO Gol VALUES (13,'91000000008',55);  -- Sport
 INSERT INTO Cartao VALUES (13,48,'amarelo',33);
 
+
+
+
 -- Partida 14: Náutico 1 x 0 Bahia
 INSERT INTO Partida VALUES
 (14, 2, 2, 2, 6, '93000000004', 3, '2024-03-06','18:00', 1, 0);
 INSERT INTO Gol VALUES (14,'91000000012',12);   -- Náutico
 INSERT INTO Cartao VALUES (14,16,'amarelo',77);
+
+
+
 
 ---------------- RODADA 3 ----------------
 -- Partida 15: Sport 2 x 1 Ceará
@@ -716,25 +910,34 @@ INSERT INTO Partida VALUES
 (15, 2, 3, 1, 7, '93000000005', 2, '2024-03-10','16:00', 2, 1);
 INSERT INTO Gol VALUES (15,'91000000001',22);   -- Sport
 INSERT INTO Gol VALUES (15,'91000000007',60);   -- Sport
-INSERT INTO Gol VALUES (15,'91100000011',80);   -- Ceará 
+INSERT INTO Gol VALUES (15,'91100000011',80);   -- Ceará
 INSERT INTO Cartao VALUES (15,7,'amarelo',35);
+
+
+
 
 -- Partida 16: Bahia 0 x 2 Fortaleza
 INSERT INTO Partida VALUES
 (16, 2, 3, 6, 8, '93000000003', 5, '2024-03-11','19:00', 0, 2);
-INSERT INTO Gol VALUES (16,'91100000021',55);   -- Fortaleza 
-INSERT INTO Gol VALUES (16,'91100000022',77);   -- Fortaleza 
+INSERT INTO Gol VALUES (16,'91100000021',55);   -- Fortaleza
+INSERT INTO Gol VALUES (16,'91100000022',77);   -- Fortaleza
 INSERT INTO Cartao VALUES (16,50,'amarelo',20);
+
+
+
 
 ---------------- RODADA 4 ----------------
 -- Partida 17: Ceará 1 x 3 Sport
 INSERT INTO Partida VALUES
 (17, 2, 4, 7, 1, '93000000004', 4, '2024-03-15','20:00', 1, 3);
-INSERT INTO Gol VALUES (17,'91100000011',25);   -- Ceará 
+INSERT INTO Gol VALUES (17,'91100000011',25);   -- Ceará
 INSERT INTO Gol VALUES (17,'91000000001',12);   -- Sport
 INSERT INTO Gol VALUES (17,'91000000002',40);   -- Sport
 INSERT INTO Gol VALUES (17,'91000000007',88);   -- Sport
 INSERT INTO Cartao VALUES (17,34,'amarelo',66);
+
+
+
 
 -- Partida 18: Fortaleza 2 x 2 Náutico
 INSERT INTO Partida VALUES
@@ -744,6 +947,9 @@ INSERT INTO Gol VALUES (18,'91100000022',60);  -- Fortaleza
 INSERT INTO Gol VALUES (18,'91000000011',22);  -- Náutico
 INSERT INTO Gol VALUES (18,'91000000012',50);  -- Náutico
 INSERT INTO Cartao VALUES (18,18,'amarelo',77);
+
+
+
 
 ---------------- RODADA 5 ----------------
 -- Partida 19: Sport 4 x 0 Bahia
@@ -755,10 +961,16 @@ INSERT INTO Gol VALUES (19,'91000000007',44);  -- Sport
 INSERT INTO Gol VALUES (19,'91000000008',80);  -- Sport
 INSERT INTO Cartao VALUES (19,41,'amarelo',32);
 
+
+
+
 -- Partida 20: Náutico 2 x 1 Ceará
 INSERT INTO Partida VALUES
 (20, 2, 5, 2, 7, '93000000003', 3, '2024-03-21','18:00', 2, 1);
 INSERT INTO Gol VALUES (20,'91000000011',10);    -- Náutico
 INSERT INTO Gol VALUES (20,'91000000017',55);    -- Náutico
-INSERT INTO Gol VALUES (20,'91100000011',61);    -- Ceará 
+INSERT INTO Gol VALUES (20,'91100000011',61);    -- Ceará
 INSERT INTO Cartao VALUES (20,25,'vermelho',90);
+
+
+

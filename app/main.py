@@ -172,9 +172,9 @@ def consulta_jogador_mais_indisciplinado(conn):
 
 
 # -----------------------
-# 5) Melhor ataque
+# 5) Melhor ataque geral
 # -----------------------
-def consulta_melhor_ataque(conn):
+def consulta_melhor_ataque_geral(conn):
     sql = """
     WITH gols_por_clube AS (
         SELECT cj.id_clube,
@@ -186,20 +186,21 @@ def consulta_melhor_ataque(conn):
     SELECT c.nome, gpc.gols
     FROM gols_por_clube gpc
     JOIN Clube c ON c.id_clube = gpc.id_clube
-    ORDER BY gpc.gols DESC;
+    ORDER BY gpc.gols DESC
+    LIMIT 3;
     """
     with conn.cursor() as cur:
         cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Melhores ataques (gols marcados) ===")
+        print("\n=== Melhores ataques Geral (gols marcados) ===")
         for nome, gols in rows:
             print(f"{nome} - {gols} gols")
 
 
 # -----------------------
-# 6) Melhor defesa
+# 6) Melhor defesa geral
 # -----------------------
-def consulta_melhor_defesa(conn):
+def consulta_melhor_defesa_geral(conn):
     sql = """
     WITH gols_sofridos AS (
         SELECT c.id_clube,
@@ -230,15 +231,15 @@ def consulta_melhor_defesa(conn):
     with conn.cursor() as cur:
         cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Melhores defesas (menos gols sofridos) ===")
+        print("\n=== Melhores defesas Geral (menos gols sofridos) ===")
         for nome, gols_contra in rows:
             print(f"{nome} - {gols_contra} gols sofridos")
 
 
 # ---------------------------------------
-# 7) Clubes com maior folha salarial
+# 7) Clubes com maior folha salarial da temporada
 # ---------------------------------------
-def consulta_maior_folha_salarial(conn):
+def consulta_maior_folha_salarial_temporada(conn):
     sql = """
     WITH folha AS (
         SELECT 
@@ -257,7 +258,7 @@ def consulta_maior_folha_salarial(conn):
     with conn.cursor() as cur:
         cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Clubes com maior folha salarial ===")
+        print("\n=== Clubes com maior folha salarial da temporada ===")
         for clube, total in rows:
             print(f"{clube} - R$ {total}")
 
@@ -292,30 +293,31 @@ def consulta_maiores_patrocinios(conn):
 
 
 # ------------------------------
-# 9) Contratos ativos
+# 9) Contratos ativos sport
 # ------------------------------
-def consulta_contratos_ativos(conn):
+def consulta_contratos_ativos_sport(conn):
     sql = """
-    SELECT
-        cj.cpf_jogador,
-        cj.id_clube,
-        c.data_inicio,
-        c.data_fim,
+    SELECT 
+        cj.cpf_jogador, 
+        cj.id_clube, 
+        c.data_inicio, 
+        c.data_fim, 
         cj.salario
     FROM Contrato_Jogador cj
     JOIN Contrato c ON c.id_contrato = cj.id_contrato
-    WHERE CURRENT_DATE BETWEEN c.data_inicio AND c.data_fim;
+    WHERE CURRENT_DATE BETWEEN c.data_inicio AND c.data_fim
+      AND cj.id_clube = 1;
     """
     with conn.cursor() as cur:
         cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Contratos de jogadores ativos hoje ===")
+        print("\n=== Contratos ativos - Sport Club do Recife ===")
         for cpf, id_clube, data_inicio, data_fim, salario in rows:
             print(f"Jogador {cpf} | Clube {id_clube} | {data_inicio} a {data_fim} | R$ {salario}")
 
 
 # ----------------------------------------------------------------
-# 10) Jogadores e total de gols em cidade/campeonato específicos
+# 10) Jogadores e total de gols em Recife-PE / Copa do Nordeste
 # ----------------------------------------------------------------
 def consulta_gols_cidade_campeonato(conn):
     sql = """
@@ -327,9 +329,10 @@ def consulta_gols_cidade_campeonato(conn):
     JOIN Partida pa ON g.id_partida = pa.id_partida
     JOIN Estadio e ON pa.id_estadio = e.id_estadio
     JOIN Campeonato c ON pa.id_campeonato = c.id_campeonato
-    WHERE e.cidade = 'Recife-PE'  AND c.nome = 'Copa do Nordeste'
+    WHERE e.cidade = 'Recife-PE' AND c.id_campeonato = 2
     GROUP BY p.nome
-    ORDER BY total_gols DESC;
+    ORDER BY total_gols DESC
+    LIMIT 5;
     """
     with conn.cursor() as cur:
         cur.execute(sql)
@@ -353,7 +356,8 @@ def consulta_estatisticas_financeiras(conn):
     JOIN Contrato_Jogador cj ON cl.id_clube = cj.id_clube
     JOIN Contrato c ON cj.id_contrato = c.id_contrato
     WHERE c.data_fim > CURRENT_DATE
-    GROUP BY cl.nome;
+    GROUP BY cl.nome
+    ORDER BY folha_salarial_total DESC
     """
     with conn.cursor() as cur:
         cur.execute(sql)
@@ -365,18 +369,20 @@ def consulta_estatisticas_financeiras(conn):
 
 
 # -------------------------------------------------------
-# 12) Técnicos de clubes ricos (folha > 100000)
+# 12) Técnicos de clubes ricos (folha > 530000)
 # -------------------------------------------------------
 def consulta_tecnicos_clubes_ricos(conn):
     sql = """
     WITH ClubesRicos AS (
-        SELECT id_clube
-        FROM Contrato_Jogador
-        GROUP BY id_clube
-        HAVING SUM(salario) > 100000
+        SELECT cj.id_clube
+        FROM Contrato_Jogador cj
+        JOIN Contrato c ON c.id_contrato = cj.id_contrato
+        WHERE CURRENT_DATE BETWEEN c.data_inicio AND c.data_fim -- Filtra apenas ativos
+        GROUP BY cj.id_clube
+        HAVING SUM(cj.salario) > 530000
     )
-    SELECT
-        p.nome AS tecnico,
+    SELECT 
+        p.nome AS tecnico, 
         c.nome AS clube
     FROM Tecnico t
     JOIN Pessoa p ON t.cpf = p.cpf
@@ -386,7 +392,9 @@ def consulta_tecnicos_clubes_ricos(conn):
     with conn.cursor() as cur:
         cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Técnicos de clubes considerados 'ricos' ===")
+        print("\n=== Técnicos de clubes considerados 'ricos' (Folha Ativa > 530k) ===")
+        if not rows:
+            print("Nenhum clube atende ao critério de folha salarial ativa.")
         for tecnico, clube in rows:
             print(f"{tecnico} - {clube}")
 
@@ -395,13 +403,6 @@ def consulta_tecnicos_clubes_ricos(conn):
 # 13) Tudo de uma partida
 # -------------------------------------------------------
 def consulta_tudo_de_uma_partida(conn):
-    # Aqui vou perguntar o id da partida para filtrar
-    try:
-        partida_id = int(input("\nDigite o id da partida: ").strip())
-    except ValueError:
-        print("ID inválido.")
-        return
-
     sql = """
     SELECT
         camp.nome AS campeonato,
@@ -440,35 +441,38 @@ def consulta_tudo_de_uma_partida(conn):
     LEFT JOIN Jogador jg ON car.id_possiveis_cartoes = jg.id_possiveis_cartoes
     LEFT JOIN Pessoa pes ON jg.cpf = pes.cpf
 
-    WHERE pa.id_partida = %s
     ORDER BY pa.id_partida, car.minuto;
     """
     with conn.cursor() as cur:
-        cur.execute(sql, (partida_id,))
+        cur.execute(sql)
         rows = cur.fetchall()
-        print("\n=== Súmula detalhada da partida ===")
         if not rows:
-            print("Nenhum dado encontrado para essa partida.")
+            print("\n=== Súmula(s) de partidas ===\nNenhum dado encontrado.")
             return
-
-        # Cabeçalho da partida com base na primeira linha
-        camp, pid, data_partida, estadio, mand, gol_mand, vis, gol_vis, resultado, juiz, *_ = rows[0]
-        print(f"Campeonato: {camp}")
-        print(f"Partida: {pid} - {data_partida} - Estádio: {estadio}")
-        print(f"{mand} {gol_mand} x {gol_vis} {vis}  ({resultado})")
-        print(f"Árbitro: {juiz}")
-        print("\nCartões:")
-
-        tem_cartao = False
-        for row in rows:
-            jogador_punido = row[11]
-            tipo_cartao = row[12]
-            minuto_cartao = row[13]
-            if jogador_punido is not None:
-                tem_cartao = True
+        print("\n=== Súmula(s) de partidas ===")
+        current = None
+        cards_present = False
+        cards_in_current = False
+        for r in rows:
+            camp, pid, data_partida, estadio, mand, gol_mand, vis, gol_vis, resultado, juiz, jogador_punido, tipo_cartao, minuto_cartao = r
+            if pid != current:
+                if current is not None and not cards_in_current:
+                    print("Nenhum cartão registrado.")
+                # Nova partida
+                current = pid
+                cards_in_current = False
+                print("\n----------------------------------------")
+                print(f"Campeonato: {camp}")
+                print(f"Partida: {pid} - {data_partida} - Estádio: {estadio}")
+                print(f"{mand} {gol_mand} x {gol_vis} {vis}  ({resultado})")
+                print(f"Árbitro: {juiz}")
+                print("Cartões:")
+            if jogador_punido:
+                cards_present = True
+                cards_in_current = True
                 print(f"- {jogador_punido} | {tipo_cartao} aos {minuto_cartao}'")
-
-        if not tem_cartao:
+        # Última partida sem cartões
+        if not cards_in_current:
             print("Nenhum cartão registrado.")
 
 
@@ -481,11 +485,11 @@ def mostrar_menu():
     print("2  - Classificação do Pernambucano")
     print("3  - Juízes com mais cartões")
     print("4  - Jogadores mais indisciplinados")
-    print("5  - Melhor ataque")
-    print("6  - Melhor defesa")
-    print("7  - Clubes com maior folha salarial")
+    print("5  - Melhor ataque Geral")
+    print("6  - Melhor defesa Geral")
+    print("7  - Clubes com maior folha salarial da temporada")
     print("8  - Maiores patrocínios")
-    print("9  - Contratos de jogadores ativos")
+    print("9  - Contratos de jogadores ativos (Sport Club do Recife)")
     print("10 - Gols por jogador (Recife-PE, Copa do Nordeste)")
     print("11 - Estatísticas financeiras por clube")
     print("12 - Técnicos de clubes ricos")
@@ -499,6 +503,44 @@ def main():
         conn = get_connection()
         print("Conexão estabelecida com sucesso.")
 
+        # Modo não-interativo controlado por variável de ambiente APP_NON_INTERACTIVE.
+        # Se APP_NON_INTERACTIVE=1, lê APP_AUTO_RUN com lista de opções (ex: "1,5,11").
+        non_interactive = os.getenv("APP_NON_INTERACTIVE", "0") == "1"
+        auto_run = os.getenv("APP_AUTO_RUN", "").strip()
+
+        # Mapeamento de funções por opção
+        actions = {
+            "1": consulta_artilheiro_pernambucano,
+            "2": consulta_classificacao_pernambucano,
+            "3": consulta_juiz_com_mais_cartoes,
+            "4": consulta_jogador_mais_indisciplinado,
+            "5": consulta_melhor_ataque_geral,
+            "6": consulta_melhor_defesa_geral,
+            "7": consulta_maior_folha_salarial_temporada,
+            "8": consulta_maiores_patrocinios,
+            "9": consulta_contratos_ativos_sport,
+            "10": consulta_gols_cidade_campeonato,
+            "11": consulta_estatisticas_financeiras,
+            "12": consulta_tecnicos_clubes_ricos,
+            "13": consulta_tudo_de_uma_partida,
+        }
+
+        if non_interactive:
+            if not auto_run:
+                print("Modo não-interativo ativo. Nada a executar (defina APP_AUTO_RUN). Encerrando.")
+            else:
+                for opt in [o.strip() for o in auto_run.split(',') if o.strip()]:
+                    fn = actions.get(opt)
+                    if fn:
+                        print(f"\n[AutoRun] Executando opção {opt}")
+                        fn(conn)
+                    else:
+                        print(f"[AutoRun] Opção desconhecida: {opt}")
+            conn.close()
+            print("Conexão fechada (modo não-interativo).")
+            return
+
+        # Modo interativo padrão
         while True:
             mostrar_menu()
             opcao = input("Escolha uma opção: ").strip()
@@ -506,32 +548,9 @@ def main():
             if opcao == "0":
                 print("Saindo...")
                 break
-            elif opcao == "1":
-                consulta_artilheiro_pernambucano(conn)
-            elif opcao == "2":
-                consulta_classificacao_pernambucano(conn)
-            elif opcao == "3":
-                consulta_juiz_com_mais_cartoes(conn)
-            elif opcao == "4":
-                consulta_jogador_mais_indisciplinado(conn)
-            elif opcao == "5":
-                consulta_melhor_ataque(conn)
-            elif opcao == "6":
-                consulta_melhor_defesa(conn)
-            elif opcao == "7":
-                consulta_maior_folha_salarial(conn)
-            elif opcao == "8":
-                consulta_maiores_patrocinios(conn)
-            elif opcao == "9":
-                consulta_contratos_ativos(conn)
-            elif opcao == "10":
-                consulta_gols_cidade_campeonato(conn)
-            elif opcao == "11":
-                consulta_estatisticas_financeiras(conn)
-            elif opcao == "12":
-                consulta_tecnicos_clubes_ricos(conn)
-            elif opcao == "13":
-                consulta_tudo_de_uma_partida(conn)
+            fn = actions.get(opcao)
+            if fn:
+                fn(conn)
             else:
                 print("Opção inválida. Tente novamente.")
 

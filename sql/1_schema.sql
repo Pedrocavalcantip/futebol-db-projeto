@@ -6,14 +6,14 @@ CREATE TABLE Pessoa (
 );
 
 CREATE TABLE Possiveis_Cartoes (
-    id_possiveis_cartoes SERIAL PRIMARY KEY
+    id_possiveis_cartoes INTEGER PRIMARY KEY
 );
 CREATE TABLE Patrocinados (
-    id_patrocinado SERIAL PRIMARY KEY
+    id_patrocinado INTEGER PRIMARY KEY
 );
 
 CREATE TABLE Clube (
-    id_clube        SERIAL PRIMARY KEY,
+    id_clube        INTEGER PRIMARY KEY,
     id_patrocinado  INTEGER UNIQUE,
     nome            VARCHAR(100) NOT NULL,
     data_fundacao   DATE,
@@ -53,12 +53,12 @@ CREATE TABLE Juiz (
 );
 
 CREATE TABLE Patrocinador (
-    id_patrocinador   SERIAL PRIMARY KEY,
+    id_patrocinador   INTEGER PRIMARY KEY,
     nome_patrocinador VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Contrato (
-    id_contrato SERIAL PRIMARY KEY,
+    id_contrato INTEGER PRIMARY KEY,
     data_inicio DATE NOT NULL,
     data_fim    DATE
 );
@@ -84,7 +84,7 @@ CREATE TABLE Contrato_Patrocinio (
 );
 
 CREATE TABLE Campeonato (
-    id_campeonato SERIAL PRIMARY KEY,
+    id_campeonato INTEGER PRIMARY KEY,
     nome          VARCHAR(100) NOT NULL,
     temporada     VARCHAR(20),
     regulamento   TEXT
@@ -106,14 +106,14 @@ CREATE TABLE Participa (
 );
 
 CREATE TABLE Estadio (
-    id_estadio  SERIAL PRIMARY KEY,
+    id_estadio  INTEGER PRIMARY KEY,
     nome        VARCHAR(100) NOT NULL,
     cidade      VARCHAR(100),
     capacidade  INTEGER
 );
 
 CREATE TABLE Partida (
-    id_partida        SERIAL PRIMARY KEY,
+    id_partida        INTEGER PRIMARY KEY,
     id_campeonato     INTEGER NOT NULL,
     numero_rodada     INTEGER NOT NULL,
     id_clube_mandante INTEGER NOT NULL,
@@ -124,8 +124,8 @@ CREATE TABLE Partida (
     horario           TIME,
     placar_mandante   INTEGER DEFAULT 0,
     placar_visitante  INTEGER DEFAULT 0,
-    FOREIGN KEY (id_campeonato, numero_rodada)
-        REFERENCES Rodada(id_campeonato, numero_rodada),
+    FOREIGN KEY (numero_rodada, id_campeonato)
+        REFERENCES Rodada(numero_rodada, id_campeonato),
     FOREIGN KEY (id_clube_mandante) REFERENCES Clube(id_clube),
     FOREIGN KEY (id_clube_visitante) REFERENCES Clube(id_clube),
     FOREIGN KEY (cpf_juiz) REFERENCES Juiz(cpf),
